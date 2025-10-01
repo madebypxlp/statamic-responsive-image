@@ -9,6 +9,13 @@
 	],
 	"homepage": "https://github.com/moodley-interactive/statamic-responsive-image",
 	"license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "statamic/cms": "^5.0",
+        "bepsvpt/blurhash": "^3.0",
+        "jonaskohl/color-extractor": "^0.4",
+        "ozdemirburak/iris": "^2.3"
+    },
 	"autoload": {
 		"psr-4": {
 			"Mia\\ImageRenderer\\": "src",
@@ -30,11 +37,6 @@
 				"Mia\\ImageRenderer\\ServiceProvider"
 			]
 		}
-	},
-	"require": {
-		"bepsvpt/blurhash": "^3.0",
-		"jonaskohl/color-extractor": "^0.4",
-		"ozdemirburak/iris": "^2.3"
 	},
 	"require-dev": {
 		"spatie/laravel-ray": "^1.17"

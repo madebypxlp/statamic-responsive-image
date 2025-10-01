@@ -52,25 +52,14 @@ trait BlurHashStringTrait
         return $muted;
     }
 
-	/**
+    /**
      * Returns the glide manager.
      *
-     * @return \Statamic\Imaging\GlideManager | \Statamic\Imaging\GlideServer
+     * @return \Statamic\Imaging\GlideManager
      */
     private function getGlideManager()
 	{
-    	return class_exists("\Statamic\Imaging\GlideManager") ? app("\Statamic\Imaging\GlideManager") : app("\Statamic\Imaging\GlideServer");
-	}
-
-    /**
-     * Returns the glide server.
-     *
-     * @return \League\Glide\Server
-     */
-    private function getGlideServer()
-	{
-		$manager = $this->getGlideManager();
-    	return $manager instanceof \Statamic\Imaging\GlideManager ? $manager->server() : $manager->create();
+	    return app("\Statamic\Imaging\GlideManager");
 	}
 
     /**
@@ -80,20 +69,8 @@ trait BlurHashStringTrait
      */
     private function getCachePath($path)
 	{
-		$manager = $this->getGlideManager();
-		$server = $this->getGlideServer();
-
-		// Statamic 3.3+
-		if ($manager instanceof \Statamic\Imaging\GlideManager) {
-			$storage = $this->getGlideManager()->cacheDisk();
-			return $storage->path($path);
-		} else {
-			// Get the filesystems path prefix
-			$pathPrefix = $manager->cachePath();
-			// Assemble the full path to the image
-			$fullPath = $pathPrefix.'/'.$server->getCache()->get($path)->getPath();
-			return $fullPath;
-		}
+		$storage = $this->getGlideManager()->cacheDisk();
+		return $storage->path($path);
 	}
 
     /**
