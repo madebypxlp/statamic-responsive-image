@@ -1,5 +1,5 @@
 {
-	"name": "mia/statamic-image-renderer",
+	"name": "madebypxlp/statamic-responsive-image",
 	"keywords": [
 		"statamic",
 		"responsive",
@@ -7,7 +7,7 @@
 		"imgix",
 		"glide"
 	],
-	"homepage": "https://github.com/moodley-interactive/statamic-responsive-image",
+	"homepage": "https://github.com/madebypxlp/statamic-responsive-image",
 	"license": "MIT",
     "require": {
         "php": "^8.4",
@@ -24,7 +24,7 @@
 	},
 	"authors": [
 		{
-			"name": "moodley interactive"
+			"name": "Metajive"
 		}
 	],
 	"extra": {
